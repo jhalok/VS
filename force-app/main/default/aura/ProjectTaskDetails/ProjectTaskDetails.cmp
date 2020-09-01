@@ -1,0 +1,39 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" controller="SelectProjectController">
+	<aura:attribute name="projectId" type="String" />
+    <aura:attribute name="projId" type="String" />
+    <aura:attribute name="expense" type="Task__c[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <table class="slds-p-around_x-small slds-text-body_small slds-table slds-table--bordered slds-table--fixed-layout " >
+                <thead>
+                       <tr>                        
+                           <th scope="col" colspan="3" class="slds-truncate slds-text-align--center slds-text-align--center 
+                                                       slds-text-align_right slds-text-heading_medium">My Task</th>
+                        </tr>
+                        <tr>
+                            <th scope="col"><div class="slds-truncate ">Name</div></th>
+                            <th scope="col" ><div class=" slds-text-align--center">Status</div></th>
+                            <th scope="col"><div class="slds-truncate  slds-text-align--right">Description</div></th>
+                        </tr>
+                    </thead> 
+                    <tbody>
+                        <aura:iteration items="{!v.expense}" var="e">
+                        <tr class="slds-hint-parent" >
+                        
+                        <td scope="row">
+                            
+                            <div class="slds-truncate slds-text-align--left"><ui:outputNumber value="{!e.Name}"/></div>                               
+                         
+                            </td>
+                        <td scope="row">
+                             <div class="slds-truncate slds-text-align--center"><ui:outputNumber value="{!e.Status__c}"/></div>
+                        </td>
+                        <td scope="row">
+                            <div class="slds-truncate slds-text-align--right"><ui:outputText value="{!e.Description__c}" /></div>                            
+                        </td>
+                        </tr>            
+                         </aura:iteration>
+                    </tbody>
+                </table>
+                {!v.projId}-***
+               <c:dragAndDrop objName="Task__c" objFields="['Name','Status__c','Project__c']" kanbanPicklistField="Status__c" proId= "{!v.projId}"/>
+</aura:component>

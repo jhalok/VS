@@ -1,0 +1,9 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <ul class="slds-has-dividers_bottom">
+        <li class="slds-item list-item">My Work</li>
+        <li class="slds-item list-item">Current Iteration</li>
+        <li class="slds-item list-item">Icebox</li>
+        <li class="slds-item list-item">Done</li>
+        <li class="slds-item list-item">Blocked</li>
+    </ul>
+</aura:component>

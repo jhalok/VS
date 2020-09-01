@@ -1,0 +1,25 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" controller="SelectProjectController">
+    
+    <div class="c-container">
+        <lightning:layout verticalAlign="stretch" multipleRows="true" class="x-large">
+            <lightning:layoutItem flexibility="auto" padding="around-small" class="custom-box">
+                <c:SidePanel/>
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" padding="around-small" class="custom-box">
+                <lightning:layout horizontalAlign="space">
+                    <lightning:layoutItem>
+                        <c:KanBanView/>
+                    </lightning:layoutItem>
+                    <lightning:layoutItem>
+                        <c:KanBanView/>
+                    </lightning:layoutItem>
+                    <lightning:layoutItem>
+                        <c:KanBanView/>
+                    </lightning:layoutItem>
+                </lightning:layout>
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+	
+</aura:component>

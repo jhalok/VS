@@ -1,0 +1,16 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <aura:attribute name="title" type="String" default=""/>
+    
+    <lightning:card>
+        <aura:set attribute="title">
+            {! v.title }
+        </aura:set>
+        <aura:set attribute="footer">
+            <lightning:badge label="20r12"/>
+            <lightning:badge label="Dev Ready"/>
+            <lightning:badge label="No QA needed"/>
+        </aura:set>        	
+        	this area will contain the description and other fields of the story and here we will be able to change the status also
+    </lightning:card>
+</aura:component>

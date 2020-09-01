@@ -1,0 +1,8 @@
+.THIS .list-item {
+	padding: 10px;
+    cursor: pointer;
+}
+
+.THIS .list-item:hover {
+  background-color: yellow;
+}

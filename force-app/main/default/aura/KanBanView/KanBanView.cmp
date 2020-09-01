@@ -1,0 +1,27 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <div class="c-container slds-box">
+    	<lightning:layout horizontalAlign="space">
+            <lightning:layoutItem padding="around-x-small">
+                <c:StoryCard title="Create new lightning component"/>
+            </lightning:layoutItem>
+        </lightning:layout>
+        
+        <lightning:layout horizontalAlign="space">
+            <lightning:layoutItem padding="around-small">
+                <c:StoryCard title="Create Process builder"/>
+            </lightning:layoutItem>
+        </lightning:layout>
+        
+        <lightning:layout horizontalAlign="space">
+            <lightning:layoutItem padding="around-small">
+                <c:StoryCard title="QWERTY Test Class"/>
+            </lightning:layoutItem>
+        </lightning:layout>
+        
+        <lightning:layout horizontalAlign="space">
+            <lightning:layoutItem padding="around-small">
+                <c:StoryCard title="Send email utility class"/>
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+</aura:component>

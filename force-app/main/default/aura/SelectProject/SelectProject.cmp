@@ -1,0 +1,17 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction,lightning:isURLAddressable,force:appHostable,flexipage:availableForAllPageTypes"
+                access="global" controller="SelectProjectController">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <lightning:navigation aura:id="navService"/>
+     <aura:registerEvent name="navigate" type="c:NavigateToC2"/>
+    <aura:attribute name="pageReference" type="Object"/>
+    <aura:attribute name="expense1" type="Task__c[]"/>
+    <aura:attribute name="projectList" type="List" default="[]"/>
+    <aura:attribute name="selectProjectId" type="Id" />
+    <lightning:select aura:id="selectproject" name="selectproject" label="Select Project" onchange="{!c.handleChangeProject}" >
+        <aura:iteration items="{!v.projectList}" var="project">
+         <option value="{!project.Id}">{!project.Name}</option>
+        </aura:iteration>
+    </lightning:select>
+    <lightning:button variant="brand" label="Go To Project" onclick="{!c.navigate}" />
+    <lightning:button  variant="success" label="Create A Project" onclick="{!c.navigate}" />
+</aura:component>

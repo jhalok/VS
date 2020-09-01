@@ -1,0 +1,26 @@
+<aura:component controller="HighlightingBorderController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <aura:html tag="style">
+        
+        .slds-box {
+        border: 2px #ff0000 solid;
+        animation: blink 1s;
+        animation-iteration-count: infinite;
+        }
+        @keyframes blink { 
+        50% { border-color:#fff ; } }
+        
+    </aura:html>
+    
+    <aura:attribute name="IsBorder" type="boolean" default="false"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <div class="{!v.IsBorder? 'slds-box': ''}"   style="border-color: rgb(194, 57, 52);">
+        <lightning:recordForm class="recFormClass"
+                              recordId="{!v.recordId}"
+                              objectApiName="Lead"
+                              layoutType="Full"
+                              mode="view" 
+                              onsubmit="{!c.handleSubmit}"
+                              />
+    </div>
+</aura:component>
